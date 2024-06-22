@@ -1,0 +1,22 @@
+{
+    "name": "dev/downloadexcel",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Dev\\Downloadexcel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "estebans salas sulca",
+            "email": "esalassulca@gmail.com"
+        }
+    ],
+    "scripts": {
+        "dev":"php index.php"
+    },
+    "require": {
+        "monolog/monolog": "^3.6",
+        "phpoffice/phpspreadsheet": "^2.1"
+    }
+}
