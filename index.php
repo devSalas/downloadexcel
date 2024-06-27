@@ -22,7 +22,7 @@ if ($method == "OPTIONS") {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recibir y decodificar los datos JSON enviados desde el cliente
     $data = json_decode(file_get_contents("php://input"));
-
+    
     // Verificar si se recibieron datos y que contienen los campos esperados
     if (isset($data->name) && isset($data->tel) && isset($data->service)) {
         // Procesar los datos como desees
