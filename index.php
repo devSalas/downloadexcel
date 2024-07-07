@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $data->name;
         $tel = $data->tel;
         $service = $data->service;
-
+        $time =  date('Y-m-d H:i:s');
         $filePath = 'datos.xlsx';
         if (file_exists($filePath)) {
             // Cargar el archivo existente
@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $spreadsheet->getActiveSheet()->setCellValue('A1', 'Nombre');
             $spreadsheet->getActiveSheet()->setCellValue('B1', 'Teléfono');
             $spreadsheet->getActiveSheet()->setCellValue('C1', 'Servicio');
+            $spreadsheet->getActiveSheet()->setCellValue('D1', 'Día y Hora');
         }
 
         $worksheet = $spreadsheet->getActiveSheet();
@@ -48,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $worksheet->setCellValue('A' . $row, $name);
         $worksheet->setCellValue('B' . $row, $tel);
         $worksheet->setCellValue('C' . $row, $service);
+        $worksheet->setCellValue('D' . $row, $time);
 
         $writer = new Xlsx($spreadsheet);
         $writer->save($filePath);
