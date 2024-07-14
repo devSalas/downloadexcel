@@ -22,7 +22,7 @@ $name = $data['name'];
 $password = $data['password'];
 
 $valid_username = 'esteban';
-$valid_password = 'g1g4m4$_20';
+$valid_password = 'zq1p6CIv27';
 
 $archivo = 'datos.xlsx';
 
